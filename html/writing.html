@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE LAST STARSHIP (Draft 2)</title>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/writing.css">
 </head>
 <body>
+
     <header class="header">
         <div class="header-left">
             <button class="back-btn">
-                <svg width="20" height="20">
+                <svg width="20" height="20" viewBox="0 0 24 24">
                     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
                 </svg>
             </button>
@@ -28,7 +30,34 @@
         </div>
     </header>
 
+    <div class="editor-toolbar">
+        <div class="toolbar-row">
+
+            <button class="toolbar-btn" id="btnBrojRijeci">Broj riječi</button>
+            <button class="toolbar-btn" id="btnUloge">Uloge</button>
+            <button class="toolbar-btn" id="btnPogresneUloge">Pogrešne uloge</button>
+            <button class="toolbar-btn" id="btnGrupisiUloge">Grupiši uloge</button>
+            <button class="toolbar-btn" id="btnBrojLinija">Broj linija</button>
+            <button class="toolbar-btn" id="btnScenarijUloge">Scenarij</button>
+
+
+            <input class="toolbar-input" type="text" id="ulogaInput" placeholder="Ime uloge (npr. KIRA)">
+
+   
+            <div class="toolbar-separator"></div>
+
+            <button class="format-btn" id="btnBold"><b>B</b></button>
+            <button class="format-btn" id="btnItalic"><i>I</i></button>
+            <button class="format-btn" id="btnUnderline"><u>U</u></button>
+        </div>
+
+
+        <div id="poruke" class="message-box"></div>
+    </div>
+
+
     <div class="container">
+
         <aside class="sidebar">
             <h2 class="sidebar-header">Scenes (3)</h2>
             <ul class="scenes-list">
@@ -47,12 +76,13 @@
             </ul>
         </aside>
 
+
         <main class="editor-container">
-            <div class="editor">
+            <div class="editor" id="divEditor" contenteditable="true">
                 <div class="scene-heading">INT. STARSHIP BRIDGE - NIGHT</div>
                 <p>
-                    The vast, grey SILENCE of the moon. Dust motes hang impossibly still in the 
-                    weak light. CAPTAIN KIRA (40s, sharp, tired) walks toward a ruined DOME, her 
+                    The vast, grey SILENCE of the moon. Dust motes hang impossibly still in the
+                    weak light. CAPTAIN KIRA (40s, sharp, tired) walks toward a ruined DOME, her
                     footsteps crunching.
                 </p>
                 <p>
@@ -64,5 +94,8 @@
             </div>
         </main>
     </div>
+    
+    <script src="../js/EditorTeksta.js"></script>
+    <script src="../js/editor.js"></script>
 </body>
 </html>
