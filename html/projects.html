@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ScenarijPro-Project</title>
-<link rel="stylesheet" href="../css/projects.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScenarijPro - Projects</title>
+    <link rel="stylesheet" href="../css/projects.css">
 </head>
 <body>
 
@@ -23,18 +23,9 @@
       <li class="nav-item">
         <a href="#" class="nav-link">
           <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
           </svg>
           Statistika
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-          </svg>
-          Postavke
         </a>
       </li>
     </ul>
@@ -48,95 +39,87 @@
     </div>
   </aside>
 
-
   <main class="main-content">
     <div class="header">
       <h1 class="page-title">Svi scenariji</h1>
       <div class="header-actions">
         <input type="text" class="search-input" placeholder="Pretraga">
-        <button class="btn-primary">+ Novi projekat</button>
+        <button class="btn-primary" onclick="createNewProject()">+ Novi projekat</button>
       </div>
     </div>
 
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="card-header">
-          <div>
-            <h3 class="project-title">LAST MISSION</h3>
-          </div>
-          <span class="badge">Active</span>
-        </div>
-        <p class="project-subtitle">Sci-Fi feature film</p>
-        <div class="project-meta">
-          <div class="meta-row">
-            <span class="meta-label">Status: </span>
-            <span class="meta-value">Druga verzija</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Broj stranica: </span>
-            <span class="meta-value">105</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Vrijeme posljednje izmjene: </span>
-            <span class="meta-value">prije 2 sata</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="card-header">
-          <div>
-            <h3 class="project-title">SILENT NIGHT</h3>
-          </div>
-        </div>
-        <p class="project-subtitle">Mystery TV pilot (45 min)</p>
-        <div class="project-meta">
-          <div class="meta-row">
-            <span class="meta-label">Status: </span>
-            <span class="meta-value">Outline završen</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Broj stranica: </span>
-            <span class="meta-value">12</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Vrijeme posljednje izmjene: </span>
-            <span class="meta-value">Jučer</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="card-header">
-          <div>
-            <h3 class="project-title">THE ARCHITECT'S SECRET</h3>
-          </div>
-        </div>
-        <p class="project-subtitle">Thriller short film</p>
-        <div class="project-meta">
-          <div class="meta-row">
-            <span class="meta-label">Status: </span>
-            <span class="meta-value">Finalna verzija</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Broj stranica: </span>
-            <span class="meta-value">28</span>
-          </div>
-          <div class="meta-row">
-            <span class="meta-label">Vrijeme posljednje izmjene: </span>
-            <span class="meta-value">prije 3 sedmice</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card new-project">
-        <svg class="new-project-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
-        </svg>
-        <span class="new-project-text">Kreiraj novi scenarij</span>
-      </div>
+    <div class="projects-grid" id="projects-container">
+        <div style="padding: 20px;">Loading projects...</div>
     </div>
   </main>
 </div>
+
+<script src="../js/PoziviAjax.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.getElementById('projects-container');
+        
+        fetch('/api/scenarios/all')
+            .then(response => response.json())
+            .then(scenarios => {
+                renderProjects(scenarios);
+            })
+            .catch(err => {
+                console.error(err);
+                container.innerHTML = '<p>Error loading projects.</p>';
+            });
+
+        function renderProjects(list) {
+            let html = '';
+
+            list.forEach(scen => {
+                html += `
+                <div class="project-card" onclick="openProject(${scen.id})">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="project-title">${scen.title}</h3>
+                        </div>
+                        <span class="badge">Active</span>
+                    </div>
+                    <p class="project-subtitle">Scenario ID: ${scen.id}</p>
+                    <div class="project-meta">
+                        <div class="meta-row">
+                            <span class="meta-label">Status: </span>
+                            <span class="meta-value">In Progress</span>
+                        </div>
+                    </div>
+                </div>`;
+            });
+
+            html += `
+            <div class="project-card new-project" onclick="createNewProject()">
+                <svg class="new-project-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m-9 1V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
+                </svg>
+                <span class="new-project-text">Kreiraj novi scenarij</span>
+            </div>`;
+
+            container.innerHTML = html;
+        }
+    });
+
+    function openProject(id) {
+        window.location.href = `writing.html?id=${id}`;
+    }
+
+    function createNewProject() {
+        const title = prompt("Unesite naziv novog scenarija:");
+        if (title) {
+            PoziviAjax.postScenario(title, function(status, data) {
+                if (status === 200) {
+                    openProject(data.id);
+                } else {
+                    alert("Greška pri kreiranju: " + status);
+                }
+            });
+        }
+    }
+</script>
+
 </body>
 </html>
