@@ -128,7 +128,6 @@ body {
     min-width: 180px;
 }
 
-
 .toolbar-btn {
     background-color: #fff;
     border: 1px solid #d0d0e8;
@@ -193,7 +192,6 @@ body {
 .message-box:empty {
     display: none;
 }
-
 
 .container {
     display: flex;
@@ -321,4 +319,16 @@ body {
     .editor {
         padding: 40px 30px;
     }
+}
+.server-actions {
+    margin-top: 10px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+}
+
+.server-actions strong {
+    margin-right: 5px;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 600;
 }

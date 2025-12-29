@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     var editor = EditorTeksta(editorDiv);
     var porukeDiv = document.getElementById("poruke");
-    
+
     const urlParams = new URLSearchParams(window.location.search);
     var currentScenarioId = urlParams.get('id') || 1;
     var currentUserId = 123; 
@@ -60,7 +60,6 @@ window.addEventListener("DOMContentLoaded", function () {
         setMessage("Loading...");
         PoziviAjax.getScenario(currentScenarioId, function(status, data) {
             if (status === 200) {
-
                 var linesArray = data.content || data.lines || [];
                 var fullText = linesArray.map(l => l.text).join("\n");
                 
@@ -89,9 +88,8 @@ window.addEventListener("DOMContentLoaded", function () {
         var content = editorDiv.innerText;
         setMessage("Saving...");
 
-
         PoziviAjax.lockLine(currentScenarioId, 1, currentUserId, function(lockStatus, lockData) {
-            if (lockStatus === 200 || lockStatus === 409) { 
+            if (lockStatus === 200 || lockStatus === 409) {
                  PoziviAjax.updateLine(currentScenarioId, 1, currentUserId, content, function(status, data) {
                     if (status === 200) {
                         setMessage("Saved at " + new Date().toLocaleTimeString());
@@ -114,7 +112,7 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     loadScenario();
-    
+
     var btnBrojRijeci = document.getElementById("btnBrojRijeci");
     if (btnBrojRijeci) {
         btnBrojRijeci.addEventListener("click", function () {
@@ -188,6 +186,68 @@ window.addEventListener("DOMContentLoaded", function () {
         btnUnderline.addEventListener("click", function () {
             var ok = editor.formatirajTekst("underline");
             if (!ok) setMessage("Nije odabran tekst ili selekcija nije u editoru.");
+        });
+    }
+
+    var btnLockChar = document.getElementById("btnLockChar");
+    if (btnLockChar) {
+        btnLockChar.addEventListener("click", function() {
+            var charName = document.getElementById("lockCharName").value.trim();
+            if (!charName) {
+                setMessage("Unesite ime lika za zaključavanje.");
+                return;
+            }
+            
+            setMessage("Zaključavam lika: " + charName + "...");
+            PoziviAjax.lockCharacter(currentScenarioId, charName, currentUserId, function(status, data) {
+                if (status === 200) {
+                    setMessage("Lik " + charName + " uspješno zaključan!");
+                } else {
+                    setMessage("Greška: " + (data.message || status));
+                }
+            });
+        });
+    }
+
+    var btnUpdateChar = document.getElementById("btnUpdateChar");
+    if (btnUpdateChar) {
+        btnUpdateChar.addEventListener("click", function() {
+            var oldName = document.getElementById("lockCharName").value.trim();
+            var newName = document.getElementById("newCharName").value.trim();
+
+            if (!oldName || !newName) {
+                setMessage("Morate unijeti staro ime (lijevo) i novo ime (desno).");
+                return;
+            }
+
+            setMessage("Mijenjam ime " + oldName + " -> " + newName + "...");
+            PoziviAjax.updateCharacter(currentScenarioId, currentUserId, oldName, newName, function(status, data) {
+                if (status === 200) {
+                    setMessage("Ime uspješno promijenjeno!");
+                    loadScenario(); 
+                } else {
+                    setMessage("Greška pri izmjeni: " + (data.message || status));
+                }
+            });
+        });
+    }
+
+    var btnGetDeltas = document.getElementById("btnGetDeltas");
+    if (btnGetDeltas) {
+        btnGetDeltas.addEventListener("click", function() {
+            setMessage("Provjeravam promjene na serveru...");
+            PoziviAjax.getDeltas(currentScenarioId, 0, function(status, data) {
+                if (status === 200) {
+                    var changes = data.deltas || [];
+                    var statusSpan = document.getElementById("deltasStatus");
+                    if(statusSpan) statusSpan.textContent = "Broj zapisa: " + changes.length;
+                    
+                    setMessage("Dohvaćeno " + changes.length + " promjena sa servera.");
+                    console.log("Sve promjene:", changes);
+                } else {
+                    setMessage("Greška pri dohvatanju promjena.");
+                }
+            });
         });
     }
 });

@@ -47,6 +47,25 @@
             <button class="format-btn" id="btnUnderline"><u>U</u></button>
         </div>
 
+        
+        <div class="toolbar-row server-actions">
+            <strong>Server:</strong>
+            
+         
+            <input type="text" id="lockCharName" placeholder="Ime lika" class="toolbar-input" style="width: 100px;">
+            <button class="toolbar-btn" id="btnLockChar" title="Zaključaj lika">Zaključaj</button>
+            
+          
+            <input type="text" id="newCharName" placeholder="Novo ime" class="toolbar-input" style="width: 100px;">
+            <button class="toolbar-btn" id="btnUpdateChar" title="Promijeni ime lika">Preimenuj</button>
+            
+            <div class="toolbar-separator">|</div>
+            
+         
+            <button class="toolbar-btn" id="btnGetDeltas">Log Promjena</button>
+            <span id="deltasStatus" style="font-size: 11px; color: #666; margin-left: 5px;"></span>
+        </div>
+
         <div id="poruke" class="message-box"></div>
     </div>
 
