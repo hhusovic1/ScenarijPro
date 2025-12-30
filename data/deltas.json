@@ -1,188 +1,164 @@
 [
   {
-    "scenarioId": "1",
-    "lineId": 1,
-    "userId": 100,
-    "timestamp": 1767040524,
-    "action": "update",
-    "newText": [
-      "Jedan dva tri četiri pet šest sedam osam devet deset jedanaest dvanaest trinaest četrnaest petnaest šesnaest sedamnaest osamnaest devetnaest dvadeset dvadesetjedan dvadesetdva dvadesettri dvadesetčetiri dvadesetpet"
-    ]
-  },
-  {
-    "scenarioId": "1",
-    "lineId": 1,
-    "userId": 555,
-    "timestamp": 1767040614,
-    "action": "update",
-    "newText": [
-      "Jedan dva tri cetiri pet sest sedam osam devet deset jedanaest dvanaest trinaest cetrnaest petnaest sesnaest sedamnaest osamnaest devetnaest dvadeset dvadesetjedan dvadesetdva dvadesettri dvadesetcetiri dvadesetpet"
-    ]
-  },
-  {
-    "timestamp": 1767041243,
-    "type": "char_rename",
-    "scenarioId": "1",
-    "oldName": "Alice",
-    "newName": "Alicia",
-    "userId": 100
-  },
-  {
-    "timestamp": 1767041648,
-    "type": "char_rename",
-    "scenarioId": "1",
-    "oldName": "Alice",
-    "newName": "Alicia",
-    "userId": 100
-  },
-  {
-    "scenarioId": "1",
-    "lineId": 1,
-    "userId": 555,
-    "timestamp": 1767041663,
-    "action": "update",
-    "newText": [
-      "Ovo je tekst koji ima sigurno vise od dvadeset rijeci da bismo provjerili da li ce server automatski prelomiti liniju na dva ili vise dijelova kako treba."
-    ]
-  },
-  {
-    "scenarioId": "1",
+    "scenarioId": "5",
     "lineId": 1,
     "userId": 999,
-    "timestamp": 1767041966,
+    "timestamp": 1767099478,
     "action": "update",
     "newText": [
-      "Test Update"
+      "Ovo je test za deltas.json"
     ]
   },
   {
-    "scenarioId": "1",
+    "scenarioId": 6,
+    "type": "line_update",
     "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767042650,
-    "action": "update",
-    "newText": [
-      ""
-    ]
+    "nextLineId": null,
+    "content": "Ovo je test za deltas.json",
+    "timestamp": 1767099654
   },
   {
-    "scenarioId": "1",
+    "scenarioId": 7,
+    "type": "line_update",
     "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767042650,
-    "action": "update",
-    "newText": [
-      ""
-    ]
+    "nextLineId": null,
+    "content": "Danas mi je divan dan hasan",
+    "timestamp": 1767101289
   },
   {
-    "scenarioId": "1",
+    "scenarioId": 7,
+    "type": "line_update",
     "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767042705,
-    "action": "update",
-    "newText": [
-      "Dafasfdsafd"
-    ]
+    "nextLineId": null,
+    "content": "Danas mi je divan dan hasan",
+    "timestamp": 1767101313
   },
   {
-    "scenarioId": "2",
-    "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767042904,
-    "action": "update",
-    "newText": [
-      "adafdsafdsafdsfdsfdsf"
-    ]
+    "timestamp": 1767101329,
+    "type": "char_rename",
+    "scenarioId": "7",
+    "oldName": "Hamza",
+    "newName": "Haris",
+    "userId": 123
   },
   {
-    "scenarioId": "3",
+    "scenarioId": 7,
+    "type": "line_update",
     "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767042927,
-    "action": "update",
-    "newText": [
-      "adfafdsfds"
-    ]
+    "nextLineId": null,
+    "content": "Danas mi je divan dan hasan Hamza",
+    "timestamp": 1767101336
   },
   {
-    "scenarioId": "1",
-    "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767049712,
-    "action": "update",
-    "newText": [
-      "Danas nam je divan dan "
-    ]
+    "timestamp": 1767101338,
+    "type": "char_rename",
+    "scenarioId": "7",
+    "oldName": "Hamza",
+    "newName": "Haris",
+    "userId": 123
   },
   {
-    "scenarioId": "1",
-    "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767049713,
-    "action": "update",
-    "newText": [
-      "Danas nam je divan dan "
-    ]
+    "timestamp": 1767101339,
+    "type": "char_rename",
+    "scenarioId": "7",
+    "oldName": "Hamza",
+    "newName": "Haris",
+    "userId": 123
   },
   {
-    "scenarioId": "1",
-    "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767049713,
-    "action": "update",
-    "newText": [
-      "Danas nam je divan dan "
-    ]
+    "timestamp": 1767101345,
+    "type": "char_rename",
+    "scenarioId": "7",
+    "oldName": "Hamza",
+    "newName": "Haris",
+    "userId": 123
   },
   {
-    "scenarioId": "2",
+    "scenarioId": 7,
+    "type": "line_update",
     "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767049748,
-    "action": "update",
-    "newText": [
-      "wdwqdq"
-    ]
+    "nextLineId": 2,
+    "content": "Danas mi je divan dan hasan Haris Danas mi je divan dan hasan Haris Danas mi je divan dan hasan",
+    "timestamp": 1767101361
   },
   {
-    "scenarioId": "2",
+    "scenarioId": 7,
+    "type": "line_update",
     "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767049748,
-    "action": "update",
-    "newText": [
-      "wdwqdq"
-    ]
+    "nextLineId": 6,
+    "content": "Danas mi je divan dan hasan Haris Danas mi je divan dan hasan Haris Danas mi je divan dan hasan",
+    "timestamp": 1767101362
   },
   {
-    "scenarioId": "2",
-    "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767049748,
-    "action": "update",
-    "newText": [
-      "wdwqdq"
-    ]
+    "timestamp": 1767101386,
+    "type": "char_rename",
+    "scenarioId": "7",
+    "oldName": "Haris",
+    "newName": "Hamza",
+    "userId": 123
   },
   {
-    "scenarioId": "2",
-    "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767049749,
-    "action": "update",
-    "newText": [
-      "wdwqdq"
-    ]
+    "timestamp": 1767101429,
+    "type": "char_rename",
+    "scenarioId": "8",
+    "oldName": "IRFAN",
+    "newName": "DAMIR",
+    "userId": 123
   },
   {
-    "scenarioId": "1",
+    "scenarioId": 8,
+    "type": "line_update",
     "lineId": 1,
-    "userId": 123,
-    "timestamp": 1767049772,
-    "action": "update",
-    "newText": [
-      "Danas nam je divan dan"
-    ]
+    "nextLineId": null,
+    "content": "",
+    "timestamp": 1767101431
+  },
+  {
+    "timestamp": 1767101432,
+    "type": "char_rename",
+    "scenarioId": "8",
+    "oldName": "IRFAN",
+    "newName": "DAMIR",
+    "userId": 123
+  },
+  {
+    "scenarioId": 8,
+    "type": "line_update",
+    "lineId": 1,
+    "nextLineId": null,
+    "content": "IRFAN IRFAN IRFAN",
+    "timestamp": 1767101437
+  },
+  {
+    "timestamp": 1767101438,
+    "type": "char_rename",
+    "scenarioId": "8",
+    "oldName": "IRFAN",
+    "newName": "DAMIR",
+    "userId": 123
+  },
+  {
+    "timestamp": 1767101439,
+    "type": "char_rename",
+    "scenarioId": "8",
+    "oldName": "IRFAN",
+    "newName": "DAMIR",
+    "userId": 123
+  },
+  {
+    "timestamp": 1767101443,
+    "type": "char_rename",
+    "scenarioId": "8",
+    "oldName": "IRFAN",
+    "newName": "DAMIR",
+    "userId": 123
+  },
+  {
+    "scenarioId": 8,
+    "type": "line_update",
+    "lineId": 1,
+    "nextLineId": null,
+    "content": "DAMIR DAMIR DAMIR",
+    "timestamp": 1767101449
   }
 ]
