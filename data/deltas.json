@@ -1,164 +1,185 @@
 [
   {
-    "scenarioId": "5",
-    "lineId": 1,
-    "userId": 999,
-    "timestamp": 1767099478,
-    "action": "update",
-    "newText": [
-      "Ovo je test za deltas.json"
-    ]
-  },
-  {
-    "scenarioId": 6,
-    "type": "line_update",
-    "lineId": 1,
-    "nextLineId": null,
-    "content": "Ovo je test za deltas.json",
-    "timestamp": 1767099654
-  },
-  {
-    "scenarioId": 7,
-    "type": "line_update",
-    "lineId": 1,
-    "nextLineId": null,
-    "content": "Danas mi je divan dan hasan",
-    "timestamp": 1767101289
-  },
-  {
-    "scenarioId": 7,
-    "type": "line_update",
-    "lineId": 1,
-    "nextLineId": null,
-    "content": "Danas mi je divan dan hasan",
-    "timestamp": 1767101313
-  },
-  {
-    "timestamp": 1767101329,
-    "type": "char_rename",
-    "scenarioId": "7",
-    "oldName": "Hamza",
-    "newName": "Haris",
-    "userId": 123
-  },
-  {
-    "scenarioId": 7,
-    "type": "line_update",
-    "lineId": 1,
-    "nextLineId": null,
-    "content": "Danas mi je divan dan hasan Hamza",
-    "timestamp": 1767101336
-  },
-  {
-    "timestamp": 1767101338,
-    "type": "char_rename",
-    "scenarioId": "7",
-    "oldName": "Hamza",
-    "newName": "Haris",
-    "userId": 123
-  },
-  {
-    "timestamp": 1767101339,
-    "type": "char_rename",
-    "scenarioId": "7",
-    "oldName": "Hamza",
-    "newName": "Haris",
-    "userId": 123
-  },
-  {
-    "timestamp": 1767101345,
-    "type": "char_rename",
-    "scenarioId": "7",
-    "oldName": "Hamza",
-    "newName": "Haris",
-    "userId": 123
-  },
-  {
-    "scenarioId": 7,
+    "scenarioId": 1,
     "type": "line_update",
     "lineId": 1,
     "nextLineId": 2,
-    "content": "Danas mi je divan dan hasan Haris Danas mi je divan dan hasan Haris Danas mi je divan dan hasan",
-    "timestamp": 1767101361
+    "content": "NARATOR: Sunce je polako zalazilo nad starim gradom.",
+    "timestamp": 1736520000
   },
   {
-    "scenarioId": 7,
+    "scenarioId": 1,
     "type": "line_update",
-    "lineId": 1,
+    "lineId": 2,
+    "nextLineId": 3,
+    "content": "ALICE: Jesi li siguran da je ključ ostao u biblioteci?",
+    "timestamp": 1736520010
+  },
+  {
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 3,
+    "nextLineId": 4,
+    "content": "BOB: To je posljednje mjesto gdje sam ga vidio prije nego što je pala noć.",
+    "timestamp": 1736520020
+  },
+  {
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 4,
+    "nextLineId": 5,
+    "content": "ALICE: Moramo požuriti prije nego što čuvar zaključa glavna vrata.",
+    "timestamp": 1736520030
+  },
+  {
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 5,
     "nextLineId": 6,
-    "content": "Danas mi je divan dan hasan Haris Danas mi je divan dan hasan Haris Danas mi je divan dan hasan",
-    "timestamp": 1767101362
+    "content": "BOB: Čekaj, čuješ li taj zvuk iza polica?",
+    "timestamp": 1736520040
   },
   {
-    "timestamp": 1767101386,
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 6,
+    "nextLineId": null,
+    "content": "NARATOR: Iz sjene se polako pojavila nepoznata figura.",
+    "timestamp": 1736520050
+  },
+  {
+    "scenarioId": 1,
     "type": "char_rename",
-    "scenarioId": "7",
-    "oldName": "Haris",
-    "newName": "Hamza",
-    "userId": 123
+    "oldName": "BOB",
+    "newName": "ROBERT",
+    "timestamp": 1736520100
   },
   {
-    "timestamp": 1767101429,
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 3,
+    "nextLineId": 7,
+    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
+    "timestamp": 1768153624
+  },
+  {
+    "timestamp": 1768153624,
     "type": "char_rename",
-    "scenarioId": "8",
-    "oldName": "IRFAN",
-    "newName": "DAMIR",
-    "userId": 123
+    "scenarioId": "1",
+    "oldName": "ALICE",
+    "newName": "ALICIA",
+    "userId": 1
   },
   {
-    "scenarioId": 8,
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 3,
+    "nextLineId": 9,
+    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
+    "timestamp": 1768154269
+  },
+  {
+    "timestamp": 1768154269,
+    "type": "char_rename",
+    "scenarioId": "1",
+    "oldName": "ALICE",
+    "newName": "ALICIA",
+    "userId": 1
+  },
+  {
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 3,
+    "nextLineId": 11,
+    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
+    "timestamp": 1768312266
+  },
+  {
+    "timestamp": 1768312266,
+    "type": "char_rename",
+    "scenarioId": "1",
+    "oldName": "ALICE",
+    "newName": "ALICIA",
+    "userId": 1
+  },
+  {
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 3,
+    "nextLineId": 13,
+    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
+    "timestamp": 1768313741
+  },
+  {
+    "timestamp": 1768313741,
+    "type": "char_rename",
+    "scenarioId": "1",
+    "oldName": "ALICE",
+    "newName": "ALICIA",
+    "userId": 1
+  },
+  {
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 3,
+    "nextLineId": 15,
+    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
+    "timestamp": 1768336611
+  },
+  {
+    "timestamp": 1768336611,
+    "type": "char_rename",
+    "scenarioId": "1",
+    "oldName": "ALICE",
+    "newName": "ALICIA",
+    "userId": 1
+  },
+  {
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 3,
+    "nextLineId": 17,
+    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
+    "timestamp": 1768336980
+  },
+  {
+    "timestamp": 1768336980,
+    "type": "char_rename",
+    "scenarioId": "1",
+    "oldName": "ALICE",
+    "newName": "ALICIA",
+    "userId": 1
+  },
+  {
+    "scenarioId": 2,
     "type": "line_update",
     "lineId": 1,
     "nextLineId": null,
-    "content": "",
-    "timestamp": 1767101431
+    "content": "hamza husovic",
+    "timestamp": 1768337012
   },
   {
-    "timestamp": 1767101432,
-    "type": "char_rename",
-    "scenarioId": "8",
-    "oldName": "IRFAN",
-    "newName": "DAMIR",
-    "userId": 123
-  },
-  {
-    "scenarioId": 8,
+    "scenarioId": 2,
     "type": "line_update",
     "lineId": 1,
     "nextLineId": null,
-    "content": "IRFAN IRFAN IRFAN",
-    "timestamp": 1767101437
+    "content": "hamza husovic Hamza",
+    "timestamp": 1768337043
   },
   {
-    "timestamp": 1767101438,
-    "type": "char_rename",
-    "scenarioId": "8",
-    "oldName": "IRFAN",
-    "newName": "DAMIR",
-    "userId": 123
-  },
-  {
-    "timestamp": 1767101439,
-    "type": "char_rename",
-    "scenarioId": "8",
-    "oldName": "IRFAN",
-    "newName": "DAMIR",
-    "userId": 123
-  },
-  {
-    "timestamp": 1767101443,
-    "type": "char_rename",
-    "scenarioId": "8",
-    "oldName": "IRFAN",
-    "newName": "DAMIR",
-    "userId": 123
-  },
-  {
-    "scenarioId": 8,
+    "scenarioId": 1,
     "type": "line_update",
-    "lineId": 1,
-    "nextLineId": null,
-    "content": "DAMIR DAMIR DAMIR",
-    "timestamp": 1767101449
+    "lineId": 3,
+    "nextLineId": 19,
+    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
+    "timestamp": 1768337133
+  },
+  {
+    "timestamp": 1768337133,
+    "type": "char_rename",
+    "scenarioId": "1",
+    "oldName": "ALICE",
+    "newName": "ALICIA",
+    "userId": 1
   }
 ]
