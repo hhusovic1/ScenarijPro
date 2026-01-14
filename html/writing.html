@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header class="header">
         <div class="header-left">
             <a href="projects.html" class="back-btn" style="text-decoration: none; display: flex; align-items: center; justify-content: center; color: inherit;">
@@ -31,6 +30,31 @@
 
     <div class="editor-toolbar">
         <div class="toolbar-row">
+            <strong>SPIRALA 3:</strong>
+            
+            <label style="display: flex; align-items: center; gap: 5px;">
+                <strong>USERID</strong>
+                <input type="number" id="userIdInput" value="1" class="toolbar-input" style="width: 60px;">
+            </label>
+            
+            <label style="display: flex; align-items: center; gap: 5px;">
+                <strong>SCENARIOID</strong>
+                <input type="number" id="scenarioIdInput" value="1" class="toolbar-input" style="width: 60px;">
+            </label>
+            
+            <button class="toolbar-btn" id="btnUcitaj">Učitaj</button>
+            
+            <div class="toolbar-separator">|</div>
+            
+            <label style="display: flex; align-items: center; gap: 5px;">
+                <strong>NOVI SCENARIJ:</strong>
+                <input type="text" id="newScenarioTitle" placeholder="Naslov scenarija" class="toolbar-input" style="width: 150px;">
+            </label>
+            
+            <button class="toolbar-btn" id="btnKreiraj">Kreiraj</button>
+        </div>
+
+        <div class="toolbar-row">
             <button class="toolbar-btn" id="btnBrojRijeci">Broj riječi</button>
             <button class="toolbar-btn" id="btnUloge">Uloge</button>
             <button class="toolbar-btn" id="btnPogresneUloge">Pogrešne uloge</button>
@@ -47,21 +71,26 @@
             <button class="format-btn" id="btnUnderline"><u>U</u></button>
         </div>
 
-        
         <div class="toolbar-row server-actions">
             <strong>Server:</strong>
-            
-         
-            <input type="text" id="lockCharName" placeholder="Ime lika" class="toolbar-input" style="width: 100px;">
-            <button class="toolbar-btn" id="btnLockChar" title="Zaključaj lika">Zaključaj</button>
-            
-          
-            <input type="text" id="newCharName" placeholder="Novo ime" class="toolbar-input" style="width: 100px;">
-            <button class="toolbar-btn" id="btnUpdateChar" title="Promijeni ime lika">Preimenuj</button>
-            
+
+            <input type="number" id="lockLineId" placeholder="ID linije" class="toolbar-input" style="width: 80px;">
+            <button class="toolbar-btn" id="btnLockLine">Zaključaj liniju</button>
+
+            <input type="number" id="updateLineId" placeholder="ID linije" class="toolbar-input" style="width: 80px;">
+            <input type="text" id="updateLineText" placeholder="Novi tekst" class="toolbar-input" style="width: 150px;">
+            <button class="toolbar-btn" id="btnUpdateLine">Ažuriraj liniju</button>
+
             <div class="toolbar-separator">|</div>
-            
-         
+
+            <input type="text" id="lockCharName" placeholder="Ime lika" class="toolbar-input" style="width: 100px;">
+            <button class="toolbar-btn" id="btnLockChar">Zaključaj lika</button>
+
+            <input type="text" id="newCharName" placeholder="Novo ime" class="toolbar-input" style="width: 100px;">
+            <button class="toolbar-btn" id="btnUpdateChar">Preimenuj</button>
+
+            <div class="toolbar-separator">|</div>
+
             <button class="toolbar-btn" id="btnGetDeltas">Log Promjena</button>
             <span id="deltasStatus" style="font-size: 11px; color: #666; margin-left: 5px;"></span>
         </div>
@@ -72,9 +101,7 @@
     <div class="container">
         <aside class="sidebar">
             <h2 class="sidebar-header">Scenes (0)</h2>
-            <ul class="scenes-list">
-
-            </ul>
+            <ul class="scenes-list"></ul>
         </aside>
 
         <main class="editor-container">
@@ -85,18 +112,5 @@
     <script src="../js/PoziviAjax.js"></script>
     <script src="../js/EditorTeksta.js"></script>
     <script src="../js/editor.js"></script>
-
-    <script>
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                const text = mutation.target.textContent;
-                if (text.startsWith("Loaded: ")) {
-                    document.getElementById("scenarioTitle").textContent = text.replace("Loaded: ", "");
-                }
-            });
-        });
-        const msgBox = document.getElementById("poruke");
-        if(msgBox) observer.observe(msgBox, { childList: true, characterData: true, subtree: true });
-    </script>
 </body>
 </html>

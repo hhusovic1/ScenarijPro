@@ -5,10 +5,6 @@ window.addEventListener("DOMContentLoaded", function () {
     var editor = EditorTeksta(editorDiv);
     var porukeDiv = document.getElementById("poruke");
 
-    const urlParams = new URLSearchParams(window.location.search);
-    var currentScenarioId = urlParams.get('id') || 1;
-    var currentUserId = 123; 
-
     function setMessage(msg) {
         if (!porukeDiv) return;
         porukeDiv.textContent = "";
@@ -19,34 +15,41 @@ window.addEventListener("DOMContentLoaded", function () {
         return JSON.stringify(obj, null, 2);
     }
 
+    function getCurrentUserId() {
+        var el = document.getElementById("userIdInput");
+        return parseInt(el ? el.value : "1") || 1;
+    }
+
+    function getCurrentScenarioId() {
+        var el = document.getElementById("scenarioIdInput");
+        return parseInt(el ? el.value : "1") || 1;
+    }
+
     function updateSceneList() {
-        var ul = document.querySelector('.scenes-list');
+        var ul = document.querySelector(".scenes-list");
         if (!ul) return;
 
         var content = editorDiv.innerText;
-        var lines = content.split('\n');
+        var lines = content.split("\n");
         var scenes = [];
-        
+
         lines.forEach((line) => {
             var trim = line.trim();
-            if (/^(INT\.|EXT\.)/i.test(trim)) {
-                scenes.push(trim);
-            }
+            if (/^(INT\.|EXT\.)/i.test(trim)) scenes.push(trim);
         });
 
         ul.innerHTML = "";
-        
-        var header = document.querySelector('.sidebar-header');
-        if(header) header.textContent = `Scenes (${scenes.length})`;
+
+        var header = document.querySelector(".sidebar-header");
+        if (header) header.textContent = `Scenes (${scenes.length})`;
 
         if (scenes.length === 0) {
             ul.innerHTML = '<li class="scene-item"><div class="scene-title">No scenes detected</div></li>';
         } else {
             scenes.forEach((sceneName, idx) => {
-                var li = document.createElement('li');
-                li.className = 'scene-item';
-                li.classList.toggle('active', idx === 0);
-                
+                var li = document.createElement("li");
+                li.className = "scene-item";
+                li.classList.toggle("active", idx === 0);
                 li.innerHTML = `
                     <div class="scene-title">${idx + 1}. ${sceneName}</div>
                     <div class="scene-pages"></div>
@@ -57,27 +60,24 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     function loadScenario() {
+        var scenarioId = getCurrentScenarioId();
         setMessage("Loading...");
-        PoziviAjax.getScenario(currentScenarioId, function(status, data) {
+
+        PoziviAjax.getScenario(scenarioId, function (status, data) {
             if (status === 200) {
+                var titleEl = document.getElementById("scenarioTitle");
+                if (titleEl) titleEl.textContent = data.title || "Loaded";
+
                 var linesArray = data.content || data.lines || [];
-                var fullText = linesArray.map(l => l.text).join("\n");
-                
+                var fullText = linesArray.map((l) => l.text).join("\n");
+
                 editorDiv.innerText = fullText;
-                setMessage("Loaded: " + data.title);
+                setMessage("Loaded: " + (data.title || ""));
                 updateSceneList();
             } else if (status === 404) {
-                if(currentScenarioId == 1) {
-                    PoziviAjax.postScenario("Default Scenario", function(s, d) {
-                        if(s === 200) {
-                            editorDiv.innerText = "";
-                            setMessage("Created new default scenario.");
-                            updateSceneList();
-                        }
-                    });
-                } else {
-                    setMessage("Scenario not found.");
-                }
+                setMessage("Scenario not found.");
+                editorDiv.innerText = "";
+                updateSceneList();
             } else {
                 setMessage("Error loading: " + status);
             }
@@ -88,9 +88,12 @@ window.addEventListener("DOMContentLoaded", function () {
         var content = editorDiv.innerText;
         setMessage("Saving...");
 
-        PoziviAjax.lockLine(currentScenarioId, 1, currentUserId, function(lockStatus, lockData) {
+        var scenarioId = getCurrentScenarioId();
+        var userId = getCurrentUserId();
+
+        PoziviAjax.lockLine(scenarioId, 1, userId, function (lockStatus, lockData) {
             if (lockStatus === 200 || lockStatus === 409) {
-                 PoziviAjax.updateLine(currentScenarioId, 1, currentUserId, content, function(status, data) {
+                PoziviAjax.updateLine(scenarioId, 1, userId, content, function (status, data) {
                     if (status === 200) {
                         setMessage("Saved at " + new Date().toLocaleTimeString());
                         updateSceneList();
@@ -99,19 +102,53 @@ window.addEventListener("DOMContentLoaded", function () {
                     }
                 });
             } else {
-                 setMessage("Lock failed: " + lockStatus + " (" + (lockData.message || "") + ")");
+                setMessage("Lock failed: " + lockStatus + " (" + (lockData.message || "") + ")");
             }
         });
     }
 
-    document.addEventListener("keydown", function(e) {
-        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-            e.preventDefault(); 
+    document.addEventListener("keydown", function (e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === "s") {
+            e.preventDefault();
             saveToServer();
         }
     });
 
+    var urlParams = new URLSearchParams(window.location.search);
+    var idFromUrl = parseInt(urlParams.get("id") || "");
+    if (!Number.isNaN(idFromUrl) && document.getElementById("scenarioIdInput")) {
+        document.getElementById("scenarioIdInput").value = idFromUrl;
+    }
+
     loadScenario();
+
+    var btnUcitaj = document.getElementById("btnUcitaj");
+    if (btnUcitaj) btnUcitaj.addEventListener("click", loadScenario);
+
+    var btnKreiraj = document.getElementById("btnKreiraj");
+    if (btnKreiraj) {
+        btnKreiraj.addEventListener("click", function () {
+            var titleEl = document.getElementById("newScenarioTitle");
+            var title = (titleEl ? titleEl.value : "").trim();
+            if (!title) {
+                setMessage("Unesite naziv scenarija.");
+                return;
+            }
+
+            setMessage("Kreiram scenarij...");
+            PoziviAjax.postScenario(title, function (status, data) {
+                if (status === 200) {
+                    var scenarioIdInput = document.getElementById("scenarioIdInput");
+                    if (scenarioIdInput && data && data.id != null) scenarioIdInput.value = data.id;
+                    var scenarioTitle = document.getElementById("scenarioTitle");
+                    if (scenarioTitle) scenarioTitle.textContent = data.title || title;
+                    loadScenario();
+                } else {
+                    setMessage("Greška pri kreiranju: " + status);
+                }
+            });
+        });
+    }
 
     var btnBrojRijeci = document.getElementById("btnBrojRijeci");
     if (btnBrojRijeci) {
@@ -144,7 +181,7 @@ window.addEventListener("DOMContentLoaded", function () {
         btnBrojLinija.addEventListener("click", function () {
             var name = ulogaInput ? ulogaInput.value : "";
             var count = editor.brojLinijaTeksta(name);
-            setMessage("Ukupan broj linija koje uloga \"" + name + "\" izgovara: " + count);
+            setMessage('Ukupan broj linija koje uloga "' + name + '" izgovara: ' + count);
         });
     }
 
@@ -189,17 +226,76 @@ window.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    var btnLockLine = document.getElementById("btnLockLine");
+    if (btnLockLine) {
+        btnLockLine.addEventListener("click", function () {
+            var lineIdEl = document.getElementById("lockLineId");
+            var lineId = parseInt(lineIdEl ? lineIdEl.value : "");
+
+            if (Number.isNaN(lineId)) {
+                setMessage("Unesite ispravan ID linije.");
+                return;
+            }
+
+            var scenarioId = getCurrentScenarioId();
+            var userId = getCurrentUserId();
+
+            setMessage("Zaključavam liniju " + lineId + "...");
+            PoziviAjax.lockLine(scenarioId, lineId, userId, function (status, data) {
+                if (status === 200) {
+                    setMessage("Linija " + lineId + " uspješno zaključana!");
+                } else if (status === 409) {
+                    setMessage("Linija " + lineId + " je već zaključana.");
+                } else {
+                    setMessage("Greška: " + (data.message || status));
+                }
+            });
+        });
+    }
+
+    var btnUpdateLine = document.getElementById("btnUpdateLine");
+    if (btnUpdateLine) {
+        btnUpdateLine.addEventListener("click", function () {
+            var lineIdEl = document.getElementById("updateLineId");
+            var textEl = document.getElementById("updateLineText");
+            var lineId = parseInt(lineIdEl ? lineIdEl.value : "");
+            var newText = textEl ? textEl.value.trim() : "";
+
+            if (Number.isNaN(lineId) || !newText) {
+                setMessage("Unesite ID linije i novi tekst.");
+                return;
+            }
+
+            var scenarioId = getCurrentScenarioId();
+            var userId = getCurrentUserId();
+
+            setMessage("Ažuriram liniju " + lineId + "...");
+            PoziviAjax.updateLine(scenarioId, lineId, userId, newText, function (status, data) {
+                if (status === 200) {
+                    setMessage("Linija " + lineId + " uspješno ažurirana!");
+                    loadScenario();
+                } else {
+                    setMessage("Greška: " + (data.message || status));
+                }
+            });
+        });
+    }
+
     var btnLockChar = document.getElementById("btnLockChar");
     if (btnLockChar) {
-        btnLockChar.addEventListener("click", function() {
-            var charName = document.getElementById("lockCharName").value.trim();
+        btnLockChar.addEventListener("click", function () {
+            var charNameEl = document.getElementById("lockCharName");
+            var charName = (charNameEl ? charNameEl.value : "").trim();
             if (!charName) {
                 setMessage("Unesite ime lika za zaključavanje.");
                 return;
             }
-            
+
+            var scenarioId = getCurrentScenarioId();
+            var userId = getCurrentUserId();
+
             setMessage("Zaključavam lika: " + charName + "...");
-            PoziviAjax.lockCharacter(currentScenarioId, charName, currentUserId, function(status, data) {
+            PoziviAjax.lockCharacter(scenarioId, charName, userId, function (status, data) {
                 if (status === 200) {
                     setMessage("Lik " + charName + " uspješno zaključan!");
                 } else {
@@ -211,20 +307,25 @@ window.addEventListener("DOMContentLoaded", function () {
 
     var btnUpdateChar = document.getElementById("btnUpdateChar");
     if (btnUpdateChar) {
-        btnUpdateChar.addEventListener("click", function() {
-            var oldName = document.getElementById("lockCharName").value.trim();
-            var newName = document.getElementById("newCharName").value.trim();
+        btnUpdateChar.addEventListener("click", function () {
+            var oldNameEl = document.getElementById("lockCharName");
+            var newNameEl = document.getElementById("newCharName");
+            var oldName = (oldNameEl ? oldNameEl.value : "").trim();
+            var newName = (newNameEl ? newNameEl.value : "").trim();
 
             if (!oldName || !newName) {
                 setMessage("Morate unijeti staro ime (lijevo) i novo ime (desno).");
                 return;
             }
 
+            var scenarioId = getCurrentScenarioId();
+            var userId = getCurrentUserId();
+
             setMessage("Mijenjam ime " + oldName + " -> " + newName + "...");
-            PoziviAjax.updateCharacter(currentScenarioId, currentUserId, oldName, newName, function(status, data) {
+            PoziviAjax.updateCharacter(scenarioId, userId, oldName, newName, function (status, data) {
                 if (status === 200) {
                     setMessage("Ime uspješno promijenjeno!");
-                    loadScenario(); 
+                    loadScenario();
                 } else {
                     setMessage("Greška pri izmjeni: " + (data.message || status));
                 }
@@ -234,14 +335,15 @@ window.addEventListener("DOMContentLoaded", function () {
 
     var btnGetDeltas = document.getElementById("btnGetDeltas");
     if (btnGetDeltas) {
-        btnGetDeltas.addEventListener("click", function() {
+        btnGetDeltas.addEventListener("click", function () {
+            var scenarioId = getCurrentScenarioId();
+
             setMessage("Provjeravam promjene na serveru...");
-            PoziviAjax.getDeltas(currentScenarioId, 0, function(status, data) {
+            PoziviAjax.getDeltas(scenarioId, 0, function (status, data) {
                 if (status === 200) {
                     var changes = data.deltas || [];
                     var statusSpan = document.getElementById("deltasStatus");
-                    if(statusSpan) statusSpan.textContent = "Broj zapisa: " + changes.length;
-                    
+                    if (statusSpan) statusSpan.textContent = "Broj zapisa: " + changes.length;
                     setMessage("Dohvaćeno " + changes.length + " promjena sa servera.");
                     console.log("Sve promjene:", changes);
                 } else {

@@ -60,90 +60,10 @@
     "lineId": 3,
     "nextLineId": 7,
     "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
-    "timestamp": 1768153624
+    "timestamp": 1768430262
   },
   {
-    "timestamp": 1768153624,
-    "type": "char_rename",
-    "scenarioId": "1",
-    "oldName": "ALICE",
-    "newName": "ALICIA",
-    "userId": 1
-  },
-  {
-    "scenarioId": 1,
-    "type": "line_update",
-    "lineId": 3,
-    "nextLineId": 9,
-    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
-    "timestamp": 1768154269
-  },
-  {
-    "timestamp": 1768154269,
-    "type": "char_rename",
-    "scenarioId": "1",
-    "oldName": "ALICE",
-    "newName": "ALICIA",
-    "userId": 1
-  },
-  {
-    "scenarioId": 1,
-    "type": "line_update",
-    "lineId": 3,
-    "nextLineId": 11,
-    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
-    "timestamp": 1768312266
-  },
-  {
-    "timestamp": 1768312266,
-    "type": "char_rename",
-    "scenarioId": "1",
-    "oldName": "ALICE",
-    "newName": "ALICIA",
-    "userId": 1
-  },
-  {
-    "scenarioId": 1,
-    "type": "line_update",
-    "lineId": 3,
-    "nextLineId": 13,
-    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
-    "timestamp": 1768313741
-  },
-  {
-    "timestamp": 1768313741,
-    "type": "char_rename",
-    "scenarioId": "1",
-    "oldName": "ALICE",
-    "newName": "ALICIA",
-    "userId": 1
-  },
-  {
-    "scenarioId": 1,
-    "type": "line_update",
-    "lineId": 3,
-    "nextLineId": 15,
-    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
-    "timestamp": 1768336611
-  },
-  {
-    "timestamp": 1768336611,
-    "type": "char_rename",
-    "scenarioId": "1",
-    "oldName": "ALICE",
-    "newName": "ALICIA",
-    "userId": 1
-  },
-  {
-    "scenarioId": 1,
-    "type": "line_update",
-    "lineId": 3,
-    "nextLineId": 17,
-    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
-    "timestamp": 1768336980
-  },
-  {
-    "timestamp": 1768336980,
+    "timestamp": 1768430262,
     "type": "char_rename",
     "scenarioId": "1",
     "oldName": "ALICE",
@@ -154,32 +74,16 @@
     "scenarioId": 2,
     "type": "line_update",
     "lineId": 1,
-    "nextLineId": null,
-    "content": "hamza husovic",
-    "timestamp": 1768337012
+    "nextLineId": 2,
+    "content": "Danas nam je lijep dan Danas nam je lijep dan Danas nam je lijep dan Danas nam je lijep dan",
+    "timestamp": 1768430621
   },
   {
     "scenarioId": 2,
     "type": "line_update",
     "lineId": 1,
-    "nextLineId": null,
-    "content": "hamza husovic Hamza",
-    "timestamp": 1768337043
-  },
-  {
-    "scenarioId": 1,
-    "type": "line_update",
-    "lineId": 3,
-    "nextLineId": 19,
-    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
-    "timestamp": 1768337133
-  },
-  {
-    "timestamp": 1768337133,
-    "type": "char_rename",
-    "scenarioId": "1",
-    "oldName": "ALICE",
-    "newName": "ALICIA",
-    "userId": 1
+    "nextLineId": 2,
+    "content": "NOvi tekst",
+    "timestamp": 1768430663
   }
 ]

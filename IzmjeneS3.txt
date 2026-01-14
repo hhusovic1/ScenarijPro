@@ -1,1 +1,2 @@
-Pokrenuto bez izmjena
+Pokrenuto bez izmjena backend logike.
+Frontend UI dodavan samo za testiranje postojećih API ruta.
