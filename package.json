@@ -3,5 +3,9 @@
     "chai": "^6.2.2",
     "mocha": "^11.7.5",
     "supertest": "^7.2.2"
+  },
+  "dependencies": {
+    "mysql2": "^3.16.1",
+    "sequelize": "^6.37.7"
   }
 }

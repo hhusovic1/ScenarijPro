@@ -10,12 +10,32 @@
     {
       "lineId": 2,
       "nextLineId": 3,
-      "text": "ALICIA: Jesi li siguran da je ključ ostao u biblioteci?"
+      "text": "Hamza"
     },
     {
       "lineId": 3,
-      "nextLineId": 7,
+      "nextLineId": 11,
       "text": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ"
+    },
+    {
+      "lineId": 11,
+      "text": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
+      "nextLineId": 12
+    },
+    {
+      "lineId": 12,
+      "text": "riječ riječ riječ riječ riječ",
+      "nextLineId": 9
+    },
+    {
+      "lineId": 9,
+      "text": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
+      "nextLineId": 10
+    },
+    {
+      "lineId": 10,
+      "text": "riječ riječ riječ riječ riječ",
+      "nextLineId": 7
     },
     {
       "lineId": 7,

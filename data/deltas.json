@@ -85,5 +85,45 @@
     "nextLineId": 2,
     "content": "NOvi tekst",
     "timestamp": 1768430663
+  },
+  {
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 3,
+    "nextLineId": 9,
+    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
+    "timestamp": 1768431700
+  },
+  {
+    "timestamp": 1768431700,
+    "type": "char_rename",
+    "scenarioId": "1",
+    "oldName": "ALICE",
+    "newName": "ALICIA",
+    "userId": 1
+  },
+  {
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 3,
+    "nextLineId": 11,
+    "content": "riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ riječ",
+    "timestamp": 1768432808
+  },
+  {
+    "timestamp": 1768432808,
+    "type": "char_rename",
+    "scenarioId": "1",
+    "oldName": "ALICE",
+    "newName": "ALICIA",
+    "userId": 1
+  },
+  {
+    "scenarioId": 1,
+    "type": "line_update",
+    "lineId": 2,
+    "nextLineId": 3,
+    "content": "Hamza",
+    "timestamp": 1768435405
   }
 ]
