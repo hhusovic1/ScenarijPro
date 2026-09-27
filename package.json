@@ -1,11 +1,23 @@
 {
+  "name": "scenarij-pro",
+  "version": "1.0.0",
+  "description": "Full-stack web aplikacija za kreiranje i prikaz scenarija.",
+  "main": "js/server.js",
+  "scripts": {
+    "start": "node js/server.js",
+    "test:api": "mocha js/testS3.js"
+  },
   "devDependencies": {
     "chai": "^6.2.2",
     "mocha": "^11.7.5",
     "supertest": "^7.2.2"
   },
   "dependencies": {
+    "express": "^5.2.1",
     "mysql2": "^3.16.1",
     "sequelize": "^6.37.7"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
