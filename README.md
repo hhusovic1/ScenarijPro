@@ -39,7 +39,7 @@ Postojeća podjela foldera je zadržana jer HTML stranice koriste relativne puta
 - npm;
 - MySQL server;
 - baza podataka `wt26`;
-- MySQL korisnik `root` sa lozinkom `password` ili odgovarajuća izmjena u `js/models.js`.
+- MySQL korisnik i lozinka definisani u `.env` fajlu.
 
 ## Instalacija i pokretanje
 
@@ -47,6 +47,8 @@ Postojeća podjela foldera je zadržana jer HTML stranice koriste relativne puta
 npm install
 npm start
 ```
+
+Konfiguracija baze se nalazi u `.env` fajlu. Za novu instalaciju kopiraj `.env.example` u `.env` i prilagodi vrijednosti po potrebi. `.env` se ne commituje u Git.
 
 Aplikacija je dostupna na [http://localhost:3000](http://localhost:3000).
 

@@ -4,7 +4,7 @@ const { sequelize, Scenario, Line, Delta, Checkpoint } = require('./models');
 const { Op } = require('sequelize');
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT || 3000);
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..')));
